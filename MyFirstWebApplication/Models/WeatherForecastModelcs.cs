@@ -51,7 +51,14 @@ namespace MyFirstWebApplication.Models
 
         public void Delete(DateTime date)
         {
-
+            foreach (WeatherForecast weatherForecast in _list)
+            {
+                if (weatherForecast.Date == date)
+                {
+                    _list.Remove(weatherForecast);
+                        break;
+                }
+            }
             //TODO: Домашняя работа, доработать метод Delete
         }
 
